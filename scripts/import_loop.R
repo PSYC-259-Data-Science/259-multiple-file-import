@@ -1,11 +1,12 @@
 library(tidyverse)
-library(here)
+library(here) #Figures out the top-level directory from RProj
 
 rm(list = ls())
 
-here() #Figures out the top-level directory from RProj
+here() #Tells us our working directory
 
 #Get the master table -- what can we do with it?
+#What did "here" just do for us?
 ppts <- read_csv(here("metadata","ppt_sync.csv")) 
 
 id_list <- as.character(ppts$id[ppts$include > 0]) #Pull the included participants (wrote this in base R for fun)
